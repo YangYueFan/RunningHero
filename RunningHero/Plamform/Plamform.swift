@@ -17,6 +17,17 @@ class Platform :SKNode {
         self.physicsBody?.isDynamic = false
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.restitution = 0
+        
+        let isCreateMoney = Int(arc4random()%2)
+        if isCreateMoney == 1 {
+            let money = Money()
+            print("生成Money")
+            money.position = CGPoint.init(x: self.width/2, y: self.height+90)
+            money.anchorPoint = CGPoint.zero
+            money.zPosition = 49;
+            self.addChild(money)
+            money.roll()
+        }
     }
     
     

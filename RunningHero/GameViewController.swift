@@ -12,8 +12,16 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var moneyNum: UILabel!
+    var money = 0
+    
+    @IBOutlet weak var stateBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(addMoney), name: NSNotification.Name.init("money"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reSetMoney), name: NSNotification.Name.init("reSetGame"), object: nil)
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -31,7 +39,23 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
         }
     }
+    
+    @objc func addMoney() {
+        self.money += 1;
+        self.moneyNum.text = "\(self.money)";
+    }
+    
+    @objc func reSetMoney() {
+        self.money = 0;
+        self.moneyNum.text = "\(self.money)";
+    }
 
+    
+
+    
+    
+    
+    
     override var shouldAutorotate: Bool {
         return true
     }

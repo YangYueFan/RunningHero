@@ -38,6 +38,7 @@
 		F2451772202061B200289CF4 /* PlamformFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2451771202061B200289CF4 /* PlamformFactory.swift */; };
 		F2451774202064FA00289CF4 /* platform.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F2451773202064FA00289CF4 /* platform.atlas */; };
 		F24517792020670000289CF4 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2451778202066FF00289CF4 /* SpriteKit.framework */; };
+		F26CBE73202C225200469F89 /* ReSetBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26CBE72202C225200469F89 /* ReSetBtn.swift */; };
 		F27240DC20219658000274DC /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F27240DA20219658000274DC /* bg.png */; };
 		F27240DD20219658000274DC /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = F27240DB20219658000274DC /* bg2.png */; };
 		F27240E020219686000274DC /* BackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27240DF20219686000274DC /* BackGround.swift */; };
@@ -98,6 +99,7 @@
 		F2451771202061B200289CF4 /* PlamformFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlamformFactory.swift; sourceTree = "<group>"; };
 		F2451773202064FA00289CF4 /* platform.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = platform.atlas; sourceTree = "<group>"; };
 		F2451778202066FF00289CF4 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		F26CBE72202C225200469F89 /* ReSetBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReSetBtn.swift; sourceTree = "<group>"; };
 		F27240DA20219658000274DC /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		F27240DB20219658000274DC /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
 		F27240DF20219686000274DC /* BackGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGround.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				F27240DF20219686000274DC /* BackGround.swift */,
+				F26CBE72202C225200469F89 /* ReSetBtn.swift */,
 			);
 			path = BackGround;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				F23AD78B2022F8AE006C848D /* Money.swift in Sources */,
 				F245173B202023A100289CF4 /* GameViewController.swift in Sources */,
 				F2451733202023A100289CF4 /* AppDelegate.swift in Sources */,
+				F26CBE73202C225200469F89 /* ReSetBtn.swift in Sources */,
 				F27240E020219686000274DC /* BackGround.swift in Sources */,
 				F245176B2020249100289CF4 /* LightSylvanus.swift in Sources */,
 				F245176E2020604200289CF4 /* Plamform.swift in Sources */,
@@ -609,6 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65X7FVM522;
 				INFOPLIST_FILE = RunningHero/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ken.RunningHero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -624,6 +629,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65X7FVM522;
 				INFOPLIST_FILE = RunningHero/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ken.RunningHero;
 				PRODUCT_NAME = "$(TARGET_NAME)";

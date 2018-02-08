@@ -11,8 +11,11 @@ class PlatformFactory: SKNode {
     var sceneWidth : CGFloat = 0.0
     var delegate : ProtocolMainScene?
     
+    var lastY : CGFloat = 70.0;
     
-    func createPlatform(midNum:Int,x:CGFloat,y:CGFloat,isCreateMoney:Int) {
+    
+    func createPlatform(midNum:Int,x:CGFloat,y:CGFloat) {
+        lastY = y;
         let platform = Platform()
         let platform_left   = SKSpriteNode(texture:textureLeft)
         platform_left.anchorPoint = CGPoint.zero
@@ -35,15 +38,7 @@ class PlatformFactory: SKNode {
         arrPlatform.append(platform_right)
         platform.onCreate(arrSprite: arrPlatform)
         self.addChild(platform)
-        
-        if isCreateMoney == 1 {
-            let money = Money()
-            money.onCreate()
-            money.position = CGPoint.init(x: self.frame.width/2, y: self.frame.height+money.frame.height)
-            money.anchorPoint = CGPoint.zero
-            self.addChild(money)
-        }
-        
+
         platforms.append(platform)
         
         //通用公式：平台长度+X坐标 - 主场景的宽度
@@ -56,20 +51,37 @@ class PlatformFactory: SKNode {
         //随机平台长度
         let midNum : Int = Int(arc4random()%4+1)
         //随机间隔
-        let gap : CGFloat = CGFloat(arc4random()%8+1)
+        let gap : CGFloat = CGFloat(arc4random()%50+1)
         //x坐标
-        let x : CGFloat = self.sceneWidth + CGFloat(midNum * 50) + gap + 100
-        let y : CGFloat = CGFloat(arc4random()%200+70)
+        let x : CGFloat = self.sceneWidth + CGFloat(midNum * 50) + gap + 50
         
-        let isCreateMoney = Int(arc4random()%2)
+        var y : CGFloat = 0;
         
-        createPlatform(midNum: midNum, x: x, y: y ,isCreateMoney: isCreateMoney)
+        while (y<70 || y>UIScreen.main.bounds.size.height - 150) {
+            let k = arc4random()%(2)
+            if k > 0 {
+                y = CGFloat(arc4random()%(100)) + lastY
+            }else{
+                y = lastY - CGFloat(arc4random()%(100))
+            }
+        }
+        
+        
+        lastY = y;
+        createPlatform(midNum: midNum, x: x, y: y )
         
     }
+    
+    func reSet()  {
+        self.removeAllChildren()
+        platforms.removeAll(keepingCapacity: false)
+    }
+    
     
     func moves(speed:CGFloat) {
         for p in platforms {
             p.position.x -= speed
+            
         }
         
     }

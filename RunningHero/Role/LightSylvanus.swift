@@ -77,7 +77,7 @@ class LightSylvanus: SKSpriteNode {
         if self.status != .jump2 {
             self.run(SKAction.animate(with: jumpFrames, timePerFrame: 0.05))
             //向上的速度
-            self.physicsBody?.velocity = CGVector.init(dx: 0, dy: 450)
+            self.physicsBody?.velocity = CGVector.init(dx: 0, dy: 700)
             if self.status == .jump{
                 self.status = .jump2
                 self.jumpStart = self.position.y
